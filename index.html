@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Hend Hosny Henidy - Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap');
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f8f9; /* Light background */
+            color: #333;
+        }
+        .header-bg {
+            background-color: #A34858; /* Deep red/brown for culinary warmth */
+            background-image: linear-gradient(135deg, #A34858 0%, #E74C3C 100%);
+        }
+        .section-title {
+            color: #A34858;
+            border-bottom: 3px solid #E74C3C;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+        }
+        .card-skill {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+        /* Experience Timeline Styling (LTR) */
+        .experience-item {
+            border-left: 4px solid #A34858;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .experience-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: #E74C3C;
+            border-radius: 50%;
+            position: absolute;
+            left: -8px; 
+            top: 0.5rem;
+            z-index: 10;
+        }
+        .gallery-item img {
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-extrabold text-[#A34858]">Chef Hend</span>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="sm:hidden">
+                    <button id="menu-button" class="text-[#333] hover:text-[#E74C3C] focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+                <!-- Main Navigation Links -->
+                <div class="hidden sm:block">
+                    <div class="flex space-x-4">
+                        <a href="#about" class="text-gray-700 hover:text-[#E74C3C] px-3 py-2 rounded-md text-sm font-medium transition duration-150">About</a>
+                        <a href="#experience" class="text-gray-700 hover:text-[#E74C3C] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Experience</a>
+                        <a href="#gallery" class="text-gray-700 hover:text-[#E74C3C] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Gallery</a>
+                        <a href="#contact" class="text-gray-700 hover:text-[#E74C3C] px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden sm:hidden px-2 pt-2 pb-3 space-y-1 text-center">
+            <a href="#about" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition duration-150">About</a>
+            <a href="#experience" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Experience</a>
+            <a href="#gallery" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Gallery</a>
+            <a href="#contact" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header and Personal Summary -->
+    <header id="about" class="header-bg text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Profile Image (FIXED: Using stable placeholder) -->
+            <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-white shadow-xl">
+                <img src="https://placehold.co/128x128/A34858/ffffff?text=Chef+Hend" alt="Chef Hend Hosny Henidy Profile Picture" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-5xl font-extrabold mb-2">Hend Hosny Henidy</h1>
+            <p class="text-2xl font-medium mb-6">Executive Chef | Culinary Concept Innovator</p>
+            <p class="max-w-2xl mx-auto text-lg leading-relaxed bg-black bg-opacity-10 p-4 rounded-xl shadow-lg">
+                A **professional chef** with over 12 years of experience, combining **high-level operational precision** with academic rigor. Specialized in **culinary concept development**, efficient **manufacturing and production management**, leading kitchen teams, and creating innovative, modern, and attractive recipes.
+            </p>
+            <!-- Social Media Links - Instagram -->
+            <div class="mt-6 space-x-4">
+                <a href="https://www.instagram.com/HendHenidy/" target="_blank" class="text-white hover:text-gray-200 transition duration-150 text-xl" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="inline-block"><path d="M12 2.163c3.204 0 3.584.012 4.85.07c3.276.143 4.793 1.636 4.938 4.938.058 1.265.07 1.646.07 4.85s-.012 3.585-.07 4.85c-.145 3.298-1.644 4.793-4.938 4.938-1.264.058-1.646.07-4.85.07s-3.585-.012-4.849-.07c-3.299-.145-4.793-1.644-4.938-4.938-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.145-3.298 1.64-4.793 4.938-4.938 1.265-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.945.073-4.434.192-6.793 2.55-6.985 6.985-.059 1.277-.073 1.685-.073 4.945s.014 3.667.073 4.945c.192 4.434 2.55 6.793 6.985 6.985 1.278.059 1.685.073 4.945.073s3.668-.014 4.945-.073c4.434-.192 6.793-2.55 6.985-6.985.059-1.277.073-1.685.073-4.945s-.014-3.667-.073-4.945c-.192-4.434-2.55-6.793-6.985-6.985-1.277-.059-1.685-.073-4.945-.073zm0 12c-2.071 0-3.75 1.679-3.75 3.75s1.679 3.75 3.75 3.75 3.75-1.679 3.75-3.75-1.679-3.75-3.75-3.75zm0 2.163c.877 0 1.587.71 1.587 1.587s-.71 1.587-1.587 1.587-1.587-.71-1.587-1.587.71-1.587 1.587-1.587zm5.538-6.163c-.496 0-.898.402-.898.898s.402.898.898.898 1.587-.71 1.587-1.587z"/></svg></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-10 text-center section-title mx-auto">Professional Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="experience-item">
+                    <h3 class="text-xl font-semibold text-[#A34858]">Assistant Chef (Opening Team)</h3>
+                    <p class="text-lg font-medium text-gray-700">Zooba Al Bahrain</p>
+                    <p class="text-sm text-gray-500 mb-2">2024 – Present</p>
+                    <ul class="text-gray-600 text-sm list-disc pl-5 space-y-1">
+                        <li>Led the team as part of the strategic opening of the new branch.</li>
+                        <li>Ensured dish quality met the highest global standards.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="text-xl font-semibold text-[#A34858]">Research & Development (R&D) Member</h3>
+                    <p class="text-lg font-medium text-gray-700">Monappetit</p>
+                    <p class="text-sm text-gray-500 mb-2">2021 – 2024</p>
+                    <ul class="text-gray-600 text-sm list-disc pl-5 space-y-1">
+                        <li>Contributed to developing new food concepts and products for the market.</li>
+                        <li>Conducted quality and taste testing for final products.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="text-xl font-semibold text-[#A34858]">Executive Chef (Opening Team)</h3>
+                    <p class="text-lg font-medium text-gray-700">Whisk Catering</p>
+                    <p class="text-sm text-gray-500 mb-2">2019 – 2021</p>
+                    <ul class="text-gray-600 text-sm list-disc pl-5 space-y-1">
+                        <li>Full oversight of kitchen operations and menu development for hospitality services.</li>
+                        <li>Awarded Employee of the Month (twice) in 2020 and 2021.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="text-xl font-semibold text-[#A34858]">Assistant Chef (Opening Team)</h3>
+                    <p class="text-lg font-medium text-gray-700">White Owl</p>
+                    <p class="text-sm text-gray-500 mb-2">2017 – 2019</p>
+                    <ul class="text-gray-600 text-sm list-disc pl-5 space-y-1">
+                        <li>Participated in establishing and operating kitchen procedures from scratch.</li>
+                        <li>Awarded Employee of the Month in 2019.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="text-xl font-semibold text-[#A34858]">Chef</h3>
+                    <p class="text-lg font-medium text-gray-700">Ovio Little</p>
+                    <p class="text-sm text-gray-500 mb-2">2016 – 2017</p>
+                    <ul class="text-gray-600 text-sm list-disc pl-5 space-y-1">
+                        <li>Contributed to daily kitchen operations, ensuring smooth workflow.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="text-xl font-semibold text-[#A34858]">Team Leader</h3>
+                    <p class="text-lg font-medium text-gray-700">Zooba Egypt</p>
+                    <p class="text-sm text-gray-500 mb-2">2013 – 2016</p>
+                    <ul class="text-gray-600 text-sm list-disc pl-5 space-y-1">
+                        <li>Led and managed the daily team to ensure the highest levels of service and production.</li>
+                        <li>Awarded Employee of the Month in 2013.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-10 text-center section-title mx-auto">Chef's Portfolio Gallery</h2>
+            
+            <!-- Signature Dishes -->
+            <h3 class="text-2xl font-semibold mb-8 text-center text-gray-800">Signature Dishes</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
+                 <!-- 1 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Assorted+Breakfast" alt="Assorted Breakfast Plate" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Assorted Breakfast: Omelette, Salami, and Sautéed Mushrooms.</p>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Tenderloin+Steak" alt="Tenderloin Steak with Pesto" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Beef Tenderloin with Pesto Lasagna.</p>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Grilled+Salmon" alt="Grilled Salmon Steak" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Grilled Salmon Steak with Broccoli Pasta.</p>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Colorful+Salad" alt="Mixed Salad" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Colorful Salad with Avocado and Kidney Beans.</p>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Appetizer+Cups" alt="Assorted Appetizer Cups" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Assorted Appetizer Cups for Events.</p>
+                    </div>
+                </div>
+                 <!-- 9 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Canapes" alt="Canapes and Mini Burgers" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Selection of Canapés and Mini Burgers.</p>
+                    </div>
+                </div>
+                 <!-- 10 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Salmon+Sandwich" alt="Smoked Salmon Sandwich" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Smoked Salmon Sandwich on Whole Grain Bread.</p>
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Sushi+Rolls" alt="Chef's Roll Sushi" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Tuna Kimbap Sushi Rolls.</p>
+                    </div>
+                </div>
+                <!-- 12 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Croquembouche" alt="Croquembouche Dessert" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Croquembouche with Caramel and Gold Sugar.</p>
+                    </div>
+                </div>
+                <!-- 13 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Mini+Tarts" alt="Mini Tarts" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Assorted Mini Tarts with Fruits and Nuts.</p>
+                    </div>
+                </div>
+                 <!-- 14 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Blueberry+Tart" alt="Blueberry Tart" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Fresh Blueberry Tart.</p>
+                    </div>
+                </div>
+                <!-- 15 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Tuna+Salad" alt="Tuna Salad" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Tuna Salad with Lettuce and Walnuts.</p>
+                    </div>
+                </div>
+                 <!-- 16 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Corn+Dog" alt="Corn Dog" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Crispy Corn Dog with Sauces.</p>
+                    </div>
+                </div>
+                <!-- 17 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Philly+Steak" alt="Philadelphia Steak Burger" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Philadelphia Steak Burger with Crispy Fries.</p>
+                    </div>
+                </div>
+                <!-- 18 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Catering+Dishes" alt="Assorted Catering Dishes" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Assorted Hospitality Dishes for Events.</p>
+                    </div>
+                </div>
+                <!-- 19 -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/333333/ffffff?text=Plated+Dish" alt="Artistic Presentation" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Dish with Precise Artistic Plating.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unforgettable Moments -->
+            <h3 class="text-2xl font-semibold mb-8 text-center text-gray-800">Unforgettable Moments</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/A34858/ffffff?text=Chef+Training" alt="Chef Hend during training" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">During a workshop and training session.</p>
+                    </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/A34858/ffffff?text=Chef+At+Work" alt="Chef Hend at work" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Focus and precision during a photo session.</p>
+                    </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/A34858/ffffff?text=Award+Winner" alt="Winning first place" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">Winning first place in a cooking competition.</p>
+                    </div>
+                </div>
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://placehold.co/400x400/A34858/ffffff?text=Team+Photo" alt="Team photo" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <p class="text-white text-center font-semibold p-4">With the team after graduation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section id="video-gallery" class="py-16 bg-[#f7f8f9]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-10 text-center section-title mx-auto">Video Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Video 1 -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-white">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1129996809?color=A34858&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="text-lg font-semibold p-4 text-center text-gray-800">Preparing Brioche Bread</h3>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-white">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1129996926?color=A34858&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="text-lg font-semibold p-4 text-center text-gray-800">The Final Touches of Plating</h3>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-white">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1129996992?color=A34858&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="text-lg font-semibold p-4 text-center text-gray-800">In the Heart of the Kitchen</h3>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-white">
+                    <div style="padding:56.25% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1129997065?color=A34858&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="text-lg font-semibold p-4 text-center text-gray-800">The Art of Salad Plating</h3>
+                </div>
+
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+    </section>
+
+    <!-- Qualifications and Education Section -->
+    <section id="education" class="py-16 bg-[#f7f8f9]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-10 text-center section-title mx-auto">Education and Qualifications</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#A34858]">
+                    <h3 class="text-xl font-bold text-[#A34858]">Professional Diploma in Culinary Arts</h3>
+                    <p class="text-lg text-gray-700">Culinary Training Center (CTC) - (British Certified)</p>
+                    <p class="text-sm text-gray-500">2015</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#A34858]">
+                    <h3 class="text-xl font-bold text-[#A34858]">Industrial Relations Department</h3>
+                    <p class="text-lg text-gray-700">Workers University</p>
+                    <p class="text-sm text-gray-500">2010</p>
+                </div>
+                <div class="text-center pt-4">
+                    <p class="text-gray-600 italic">"Academic precision and practical passion are the foundation of every dish."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Philosophy Section -->
+    <section id="philosophy" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-8 section-title mx-auto">Passion & Methodology: My Culinary Philosophy</h2>
+            <div class="p-8 bg-[#A34858] bg-opacity-10 rounded-xl shadow-inner text-left">
+                <p class="text-xl font-bold text-[#A34858] mb-4 border-b border-[#A34858] pb-2 inline-block">My professional experience is deeply rooted in high-efficiency operational environments and commercial kitchens, where I have proven my ability to lead and develop recipes under high-volume production demands.</p>
+                <p class="text-gray-700 leading-loose text-lg mt-4">
+                    As a graduate of the **CTC Culinary Training Center**, I have mastered a wide range of techniques, from **classic fundamentals** to **innovative contemporary applications**. My approach focuses on three core pillars: **Mastery of Culinary Arts, Systematic Kitchen Organization, and Application of the Highest Safety and Hygiene Standards (HACCP)**.
+                </p>
+                <p class="text-gray-700 leading-loose text-lg mt-4">
+                    I am always ready to embrace challenges and prove my adaptability and growth, seeing every dish served as a unique opportunity to embody my deep respect for the culinary profession.
+                </p>
+                <p class="mt-6 text-[#A34858] font-extrabold italic text-2xl text-center">
+                    "True passion and continuous learning are the keys to success in any kitchen."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="header-bg text-white py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Connect with Me</h2>
+            <p class="text-xl mb-6">Always ready to explore new projects and opportunities.</p>
+            <div class="space-y-4 md:space-y-0 md:flex md:justify-center md:items-center md:space-x-8">
+                <div class="flex items-center justify-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="mailto:hendhosnyhenidy@gmail.com" class="hover:underline">hendhosnyhenidy@gmail.com</a>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2 2h-3.47c-.96 0-1.85-.31-2.58-.85L7 16l-3.5 3.5c-.73.54-1.62.85-2.58.85H2a2 2 0 0 1-2-2v-3c0-.96.31-1.85.85-2.58L12 3.5l3.5 3.5c.73.54 1.62.85 2.58.85H20a2 2 0 0 1 2 2z"></path></svg>
+                    <span dir="ltr">+973 36463188</span>
+                </div>
+                 <div class="flex items-center justify-center space-x-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.687-1.475l-6.351 1.688z"/></svg>
+                    <a href="https://wa.me/97336463188" target="_blank" class="hover:underline">WhatsApp</a>
+                </div>
+            </div>
+            <p class="text-sm mt-8 opacity-75">© 2024 Hend Hosny Henidy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // --- FIREBASE AND AUTH SETUP (Standard Boilerplate) ---
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+
+        let app;
+        let auth;
+
+        // Initialize Firebase
+        if (Object.keys(firebaseConfig).length > 0) {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            // setLogLevel('debug'); // Removed unnecessary logging for simple portfolio
+
+            // Attempt custom token sign-in or anonymous sign-in on load
+            window.addEventListener('load', async function() {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    try {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } catch (error) {
+                        console.error("Custom token sign-in failed:", error);
+                        await signInAnonymously(auth);
+                    }
+                } else {
+                    await signInAnonymously(auth);
+                }
+            });
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // --- LLM RELATED FUNCTIONS REMOVED as requested ---
+        // (generateRecipe, analyzeConcept, callGeminiApi, fetchWithBackoff, marked functions were removed)
+    </script>
+</body>
+</html>
